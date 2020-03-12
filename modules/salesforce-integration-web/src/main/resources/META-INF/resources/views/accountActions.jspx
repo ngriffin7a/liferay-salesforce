@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jsp:root xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:jsp="http://java.sun.com/JSP/Page"
+	xmlns:liferay-ui="http://liferay.com/tld/ui"
+	xmlns:portlet="http://xmlns.jcp.org/portlet_3_0" version="2.1">
+
+	<c:set value="${SEARCH_CONTAINER_RESULT_ROW.object}" var="account" />
+
+	<portlet:renderURL var="viewAccountURL">
+		<portlet:param name="salesforceAccountId" value="${account.accountId}" />
+		<portlet:param name="javax.portlet.render" value="account" />
+		<portlet:param name="viewId" value="view" />
+		<!-- SearchContainer view state -->
+		<portlet:param name="cur" value="${accountSearchContainerViewState.cur}" />
+		<portlet:param name="delta" value="${accountSearchContainerViewState.delta}" />
+		<portlet:param name="displayStyle" value="${accountSearchContainerViewState.displayStyle}" />
+		<portlet:param name="orderByCol" value="${accountSearchContainerViewState.orderByCol}" />
+		<portlet:param name="orderByType" value="${accountSearchContainerViewState.orderByType}" />
+		<portlet:param name="resetCur" value="${accountSearchContainerViewState.resetCur}" />
+	</portlet:renderURL>
+
+	<liferay-ui:icon-menu markupView="lexicon">
+		<liferay-ui:icon message="view" url="${viewAccountURL}" />
+	</liferay-ui:icon-menu>
+
+</jsp:root>

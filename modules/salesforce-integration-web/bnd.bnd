@@ -1,0 +1,4 @@
+Bundle-Name: salesforce-integration-web
+Bundle-SymbolicName: com.liferay.salesforce.integration.web
+Bundle-Version: 1.0.0
+Export-Package: com.liferay.salesforce.integration.web.internal.constants
